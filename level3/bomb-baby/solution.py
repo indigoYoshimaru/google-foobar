@@ -1,7 +1,3 @@
-def find_multiplier(a, b):
-    return (abs(a - b) // min(a, b)) - 1
-
-
 def solution(x, y):
     x = int(x)
     y = int(y)
@@ -13,10 +9,10 @@ def solution(x, y):
             return "impossible"
 
         mul = 1
-        if abs(x - y) > min(x, y) * 10:
-            mul = find_multiplier(x, y)
+        if max(x, y) > min(x, y) * 2:
+            mul = (max(x, y) // min(x, y)) - 1
         height += mul
-
+        
         if x > y:
             x -= y * mul
             continue
@@ -38,8 +34,10 @@ def run_with_test_case(func):
         ("3", "4"),
         ("6", "2"),
         ("2", "2"),
+        ("3", "10"),
         ("5000", "2"),
         ("1000", "33"),
+        ("10000", "1"),
     ]
     results = [
         "1",
@@ -49,8 +47,10 @@ def run_with_test_case(func):
         "3",
         "impossible",
         "impossible",
+        "5",
         "impossible",
         "38",
+        "9999",
     ]
     try:
         for idx, test_case in enumerate(test_cases):
