@@ -39,7 +39,7 @@ The Google Foobar competition is structured into five levels, each level present
   
 ## Takeaways
 
-The problems in the last two levels are both enjoyable and challenging to solve, especially for someone like me who hasn't tackled competitive programming questions in ages. I remember dedicating a full two days to studying Group and Number Theory for the last problem, which resulted in tears and an existential crisis as I questioned what on earth I was doing. However, despite the challenges, I strongly believe it's worth giving it a try, and it serves as a great break from my usual focus on AI.
+The problems in the last two levels are both enjoyable and challenging to solve, especially for someone like me who hasn't tackled competitive programming questions in ages. I remember dedicating full two days to studying Group and Number Theory for the last problem, which resulted in an existential crisis as I questioned what on earth I was doing. However, despite the challenges, I strongly believe it's worth giving it a try, and it serves as a great break from my usual focus on AI.
 
 After completing this challenge, I feel motivated to dive back into solving math and competitive programming problems because, somehow, my heart is still in it. Besides, as I've come to realize just how terrible my math skills are at the moment, what better way to improve than by practicing more?
 
