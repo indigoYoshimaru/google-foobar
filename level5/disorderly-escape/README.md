@@ -62,3 +62,26 @@ Output:    430
 Input:solution.solution(2, 2, 2)
 Output:    7
 ```
+
+## Solution
+Upon receiving this problem, I immediately dismissed the idea of brute-forcing $20^{10000}$ cases as it seemed impractical. It became evident that simple math operations and logic comparisons wouldn't suffice, ruling out the possibility of using Dynamic Programming as well. In this moment of uncertainty, I turned to the guiding light of Google Search, which led me to discover Burnside's Lemma and necklace problem. 
+
+As Burnside's Lemma (possibly not Burnside's) stated, given a set $X$ representing the set of states, and a set of group actions $G$ (e.g. rotations of elements in a rows), the formula for determining the number of final orbit sets is: 
+    
+$$N = \frac{1}{|G|} \sum_{g \in G} |X^g|$$
+, in which $X^g$ denotes the set of elements in $X$ that is unchanged under the action $g$. 
+
+Consider the necklace problem, which involves counting the number of distinct necklaces that can be formed using a set of beads, considering that rotations and reflections of the same necklace are considered identical. For example, let's consider a necklace with a length of 4, where each bead can have 2 states: 0 and 1. In this case, we have 4 types of rotations, hence, $|G| = 4$ (as 5-rotation would similar to shifting 4 then shifting 1):
+- $g_1$ (1-rotation): Shifting the necklace by 1 bead, we realize that only 0000 and 1111 would not change, so the size of $X^{g_1}$ is 2. 
+- $g_2$ (2-rotation): Shifting the necklace by 2 beads (eg: 0011 -> 0110) results in 4 strings that remain unchanged $X^{g_2}= {0000, 0101, 1010, 1111}$.
+- $g_3$ (3-rotation): Again, this rotation results in only 0000 and 1111 remaining unchanged.
+- $g_4$ (4-rotation): This rotation would leave all 16 permutations of the length-4 necklace unchanged, hence $|X^{g_4}| = 16$. 
+
+Finally, we would have the number of symmetric groups to be: 
+$$N = \frac{1}{4}*(2+4+2+16) = 6$$
+This leaves the group representations as ${0000,0001,0011,0111,1010,1111}$. Remember, these are the **representations** of the group that remain unchanged under certain shifts, not the number of unchanged **permutations**.
+
+In order to turn this into programmable code, we would need a little mathematical conversion. 
+
+$$N = \frac{1}{|G|}\sum_{i=1}^{|G|}s^{gcd(i, |G|)}$$
+
