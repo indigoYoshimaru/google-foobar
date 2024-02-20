@@ -11,7 +11,7 @@
 
 - What is included in this Repository?
 
-    This repository includes my solutions to the problems and brief explanations for solutions starting from level 3 and above.
+    This repository includes my solutions to the problems and I'll do my best to provide brief explanations for solutions starting from level 3 and above.
 
 - What does one need to solve the problems?
 
